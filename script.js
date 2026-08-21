@@ -1,552 +1,220 @@
 /* =====================================================
-   ARI MULDIN AL BANANI
-   PORTFOLIO INTERACTION
+   PAGE LOADER
 ===================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", function () {
+
+    const loader = document.getElementById("loader");
+
+    setTimeout(function () {
+        loader.classList.add("hide");
+    }, 500);
+
+});
 
 
-    /* =================================================
-       SCROLL REVEAL
-    ================================================= */
+/* =====================================================
+   MOBILE MENU
+===================================================== */
 
-    const revealElements = document.querySelectorAll(".reveal");
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
 
-    const revealObserver = new IntersectionObserver(
-        (entries) => {
+if (menuBtn && mobileMenu) {
 
-            entries.forEach((entry) => {
+    menuBtn.addEventListener("click", function () {
 
-                if (entry.isIntersecting) {
+        mobileMenu.classList.toggle("active");
 
-                    entry.target.classList.add("active");
-
-                    revealObserver.unobserve(entry.target);
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.12
-        }
-    );
-
-
-    revealElements.forEach((element) => {
-
-        revealObserver.observe(element);
-
-    });
-
-
-
-    /* =================================================
-       NAVBAR SCROLL
-    ================================================= */
-
-    const navbar = document.querySelector(".nav");
-
-    function updateNavbar() {
-
-        if (window.scrollY > 50) {
-
-            navbar.classList.add("scrolled");
-
+        if (mobileMenu.classList.contains("active")) {
+            menuBtn.innerHTML = "✕";
         } else {
-
-            navbar.classList.remove("scrolled");
-
+            menuBtn.innerHTML = "☰";
         }
 
-    }
+    });
 
-    window.addEventListener(
-        "scroll",
-        updateNavbar,
-        { passive: true }
+
+    const mobileLinks = mobileMenu.querySelectorAll("a");
+
+    mobileLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            mobileMenu.classList.remove("active");
+            menuBtn.innerHTML = "☰";
+
+        });
+
+    });
+
+}
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+const revealElements = document.querySelectorAll(
+    ".section, .project, .project-card, .result-card, .timeline-item, .organization-card, .skill-list, .contact-inner"
+);
+
+const revealObserver = new IntersectionObserver(
+    function (entries) {
+
+        entries.forEach(function (entry) {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+                revealObserver.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.08
+    }
+);
+
+
+revealElements.forEach(function (element) {
+
+    element.classList.add("reveal");
+
+    revealObserver.observe(element);
+
+});
+
+
+/* =====================================================
+   MOUSE CURSOR
+===================================================== */
+
+const cursor = document.querySelector(".cursor");
+
+if (cursor) {
+
+    document.addEventListener("mousemove", function (event) {
+
+        cursor.style.left = event.clientX + "px";
+        cursor.style.top = event.clientY + "px";
+
+    });
+
+
+    const hoverElements = document.querySelectorAll(
+        "a, button, .project-card, .organization-card, .skill-list span"
     );
 
-    updateNavbar();
+    hoverElements.forEach(function (element) {
 
+        element.addEventListener("mouseenter", function () {
 
-
-    /* =================================================
-       MOBILE MENU
-    ================================================= */
-
-    const menuButton = document.querySelector(".menu");
-    const mobileMenu = document.querySelector(".mobile-menu");
-
-    if (menuButton && mobileMenu) {
-
-        menuButton.addEventListener("click", () => {
-
-            mobileMenu.classList.toggle("show");
-
-            if (mobileMenu.classList.contains("show")) {
-
-                menuButton.textContent = "×";
-
-            } else {
-
-                menuButton.textContent = "☰";
-
-            }
+            cursor.style.transform = "translate(-50%, -50%) scale(3)";
+            cursor.style.mixBlendMode = "difference";
 
         });
 
+        element.addEventListener("mouseleave", function () {
 
-        const mobileLinks =
-            mobileMenu.querySelectorAll("a");
-
-
-        mobileLinks.forEach((link) => {
-
-            link.addEventListener("click", () => {
-
-                mobileMenu.classList.remove("show");
-
-                menuButton.textContent = "☰";
-
-            });
+            cursor.style.transform = "translate(-50%, -50%) scale(1)";
+            cursor.style.mixBlendMode = "normal";
 
         });
+
+    });
+
+}
+
+
+/* =====================================================
+   NAVBAR BACKGROUND ON SCROLL
+===================================================== */
+
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", function () {
+
+    if (!navbar) return;
+
+    if (window.scrollY > 50) {
+
+        navbar.style.boxShadow = "0 8px 30px rgba(0,0,0,0.05)";
+
+    } else {
+
+        navbar.style.boxShadow = "none";
 
     }
 
+});
 
 
-    /* =================================================
-       COUNTER ANIMATION
-    ================================================= */
+/* =====================================================
+   ACTIVE NAVIGATION
+===================================================== */
 
-    const counters =
-        document.querySelectorAll(".counter");
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-links a");
 
+window.addEventListener("scroll", function () {
 
-    function animateCounter(counter) {
+    let current = "";
 
-        const target =
-            parseFloat(counter.dataset.target);
+    sections.forEach(function (section) {
 
-        const duration = 1800;
+        const sectionTop = section.offsetTop - 150;
+        const sectionHeight = section.offsetHeight;
 
-        const startTime = performance.now();
+        if (
+            window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight
+        ) {
 
-
-        function update(currentTime) {
-
-            const elapsed =
-                currentTime - startTime;
-
-            const progress =
-                Math.min(elapsed / duration, 1);
-
-
-            /*
-             * Ease-out cubic
-             */
-
-            const eased =
-                1 - Math.pow(1 - progress, 3);
-
-
-            const current =
-                target * eased;
-
-
-            counter.textContent =
-                current.toFixed(2);
-
-
-            if (progress < 1) {
-
-                requestAnimationFrame(update);
-
-            } else {
-
-                counter.textContent =
-                    target.toFixed(2);
-
-            }
+            current = section.getAttribute("id");
 
         }
 
-
-        requestAnimationFrame(update);
-
-    }
-
-
-    const counterObserver =
-        new IntersectionObserver(
-            (entries, observer) => {
-
-                entries.forEach((entry) => {
-
-                    if (entry.isIntersecting) {
-
-                        animateCounter(entry.target);
-
-                        observer.unobserve(entry.target);
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.5
-            }
-        );
-
-
-    counters.forEach((counter) => {
-
-        counterObserver.observe(counter);
-
     });
 
 
+    navLinks.forEach(function (link) {
 
-    /* =================================================
-       CUSTOM CURSOR
-    ================================================= */
+        link.style.opacity = "0.55";
 
-    const cursorDot =
-        document.querySelector(".cursor-dot");
+        if (link.getAttribute("href") === "#" + current) {
 
-    const cursorRing =
-        document.querySelector(".cursor-ring");
-
-
-    if (
-        cursorDot &&
-        cursorRing &&
-        window.matchMedia("(pointer:fine)").matches
-    ) {
-
-        let mouseX = 0;
-        let mouseY = 0;
-
-        let ringX = 0;
-        let ringY = 0;
-
-
-        document.addEventListener(
-            "mousemove",
-            (event) => {
-
-                mouseX = event.clientX;
-                mouseY = event.clientY;
-
-
-                cursorDot.style.left =
-                    `${mouseX}px`;
-
-                cursorDot.style.top =
-                    `${mouseY}px`;
-
-            }
-        );
-
-
-        function animateCursor() {
-
-            ringX +=
-                (mouseX - ringX) * 0.15;
-
-            ringY +=
-                (mouseY - ringY) * 0.15;
-
-
-            cursorRing.style.left =
-                `${ringX}px`;
-
-            cursorRing.style.top =
-                `${ringY}px`;
-
-
-            requestAnimationFrame(
-                animateCursor
-            );
+            link.style.opacity = "1";
 
         }
-
-
-        animateCursor();
-
-
-        const hoverElements =
-            document.querySelectorAll(
-                "a, button, .project-card, .skills-list span"
-            );
-
-
-        hoverElements.forEach((element) => {
-
-            element.addEventListener(
-                "mouseenter",
-                () => {
-
-                    cursorRing.classList.add("hover");
-
-                }
-            );
-
-
-            element.addEventListener(
-                "mouseleave",
-                () => {
-
-                    cursorRing.classList.remove("hover");
-
-                }
-            );
-
-        });
-
-    }
-
-
-
-    /* =================================================
-       PROJECT CARD MOUSE EFFECT
-    ================================================= */
-
-    const projectCards =
-        document.querySelectorAll(
-            ".project-card"
-        );
-
-
-    projectCards.forEach((card) => {
-
-        card.addEventListener(
-            "mousemove",
-            (event) => {
-
-                if (
-                    !window.matchMedia(
-                        "(pointer:fine)"
-                    ).matches
-                ) {
-                    return;
-                }
-
-
-                const rect =
-                    card.getBoundingClientRect();
-
-
-                const x =
-                    event.clientX - rect.left;
-
-
-                const y =
-                    event.clientY - rect.top;
-
-
-                const centerX =
-                    rect.width / 2;
-
-
-                const centerY =
-                    rect.height / 2;
-
-
-                const rotateX =
-                    ((y - centerY) / centerY) * -1.5;
-
-
-                const rotateY =
-                    ((x - centerX) / centerX) * 1.5;
-
-
-                card.style.transform =
-                    `translateY(-7px)
-                     perspective(900px)
-                     rotateX(${rotateX}deg)
-                     rotateY(${rotateY}deg)`;
-
-            }
-        );
-
-
-        card.addEventListener(
-            "mouseleave",
-            () => {
-
-                card.style.transform = "";
-
-            }
-        );
-
-    });
-
-
-
-    /* =================================================
-       HERO PHOTO PARALLAX
-    ================================================= */
-
-    const heroVisual =
-        document.querySelector(".hero-visual");
-
-
-    const photoContainer =
-        document.querySelector(".photo-container");
-
-
-    if (
-        heroVisual &&
-        photoContainer &&
-        window.matchMedia("(pointer:fine)").matches
-    ) {
-
-        heroVisual.addEventListener(
-            "mousemove",
-            (event) => {
-
-                const rect =
-                    heroVisual.getBoundingClientRect();
-
-
-                const x =
-                    event.clientX - rect.left;
-
-
-                const y =
-                    event.clientY - rect.top;
-
-
-                const centerX =
-                    rect.width / 2;
-
-
-                const centerY =
-                    rect.height / 2;
-
-
-                const moveX =
-                    (x - centerX) * 0.015;
-
-
-                const moveY =
-                    (y - centerY) * 0.015;
-
-
-                photoContainer.style.transform =
-                    `translate(${moveX}px, ${moveY}px)
-                     rotate(2deg)`;
-
-            }
-        );
-
-
-        heroVisual.addEventListener(
-            "mouseleave",
-            () => {
-
-                photoContainer.style.transform =
-                    "translate(0,0) rotate(2deg)";
-
-            }
-        );
-
-    }
-
-
-
-    /* =================================================
-       STAGGER PROJECT ELEMENTS
-    ================================================= */
-
-    const staggerGroups = [
-        ".project-card",
-        ".org-card",
-        ".timeline-item",
-        ".skills-list span"
-    ];
-
-
-    staggerGroups.forEach((selector) => {
-
-        const elements =
-            document.querySelectorAll(selector);
-
-
-        elements.forEach((element, index) => {
-
-            element.style.transitionDelay =
-                `${index * 0.06}s`;
-
-        });
-
-    });
-
-
-
-    /* =================================================
-       ACTIVE NAV LINK
-    ================================================= */
-
-    const sections =
-        document.querySelectorAll(
-            "section[id]"
-        );
-
-
-    const navLinks =
-        document.querySelectorAll(
-            ".desktop-nav a"
-        );
-
-
-    const sectionObserver =
-        new IntersectionObserver(
-            (entries) => {
-
-                entries.forEach((entry) => {
-
-                    if (entry.isIntersecting) {
-
-                        navLinks.forEach((link) => {
-
-                            link.classList.remove(
-                                "active"
-                            );
-
-                            if (
-                                link.getAttribute("href") ===
-                                `#${entry.target.id}`
-                            ) {
-
-                                link.classList.add(
-                                    "active"
-                                );
-
-                            }
-
-                        });
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.35
-            }
-        );
-
-
-    sections.forEach((section) => {
-
-        sectionObserver.observe(section);
 
     });
 
 });
+
+
+/* =====================================================
+   IMAGE FALLBACK
+===================================================== */
+
+const profileImage = document.querySelector(".profile-image img");
+
+if (profileImage) {
+
+    profileImage.addEventListener("error", function () {
+
+        profileImage.style.display = "none";
+
+        const fallback = document.getElementById("photoFallback");
+
+        if (fallback) {
+            fallback.style.display = "flex";
+        }
+
+    });
+
+}
