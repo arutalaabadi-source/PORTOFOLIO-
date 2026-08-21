@@ -1,22 +1,9 @@
-# Ari Muldin Al Banani — Portfolio
+# Ari Muldin Al Banani — Professional Portfolio
 
-A responsive personal portfolio website for GitHub Pages.
+Upload the files and the `assets` folder to the root of the GitHub repository.
 
-## Files
-- `index.html` — website content
-- `style.css` — layout and styling
-- `script.js` — mobile menu and scroll animations
+Replace `assets/profile.jpg` with your professional photo and `assets/Ari_Muldin_CV.pdf` with your CV. Then replace the placeholder email and LinkedIn URL in `index.html`.
 
-## Before publishing
-Open `index.html` and replace:
-- `your.email@example.com` with your email
-- `https://www.linkedin.com/` with your LinkedIn profile URL
-- Any project/experience text you want to customize
 
-## GitHub Pages
-1. Create a new GitHub repository.
-2. Upload `index.html`, `style.css`, and `script.js`.
-3. Go to **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select `main` and `/ (root)`.
-6. Save and wait for GitHub Pages to publish.
+## Personal assets
+`assets/profile.jpg` and `assets/Ari_Muldin_CV.pdf` are placeholders. Replace them yourself before publishing.
