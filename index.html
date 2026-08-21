@@ -1,1077 +1,704 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Ari Muldin Al Banani — Industrial Engineering Portfolio">
+    <meta name="description"
+        content="Ari Muldin Al Banani — Industrial Engineering Portfolio">
 
-    <title>Ari Muldin Al Banani | Industrial Engineering</title>
+    <title>Ari Muldin Al Banani | Portfolio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
 
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- =====================================================
-     CURSOR
-===================================================== -->
+    <!-- LOADING -->
+    <div class="loader" id="loader">
+        <div class="loader-text">AMA<span>.</span></div>
+    </div>
 
-<div class="cursor-dot"></div>
-<div class="cursor-ring"></div>
+    <!-- CURSOR -->
+    <div class="cursor"></div>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <a href="#home" class="logo">
+            AMA<span>.</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="Ari_Muldin_CV.pdf.pdf" target="_blank" class="nav-cv">
+            CV ↗
+        </a>
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+    </header>
 
 
-<!-- =====================================================
-     BACKGROUND
-===================================================== -->
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
 
-<div class="grid-bg"></div>
-<div class="noise"></div>
-
-
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
-
-<header class="nav">
-
-    <a href="#home" class="brand">
-        AMA<span>.</span>
-    </a>
-
-    <nav class="desktop-nav">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
-    </nav>
 
-    <a
-        class="nav-cv"
-        href="./Ari_Muldin_CV.pdf.pdf"
-        target="_blank"
-        rel="noopener">
-        CV ↗
-    </a>
-
-    <button class="menu" aria-label="Open menu">
-        ☰
-    </button>
-
-</header>
-
-
-<!-- =====================================================
-     MOBILE MENU
-===================================================== -->
-
-<div class="mobile-menu">
-
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-
-</div>
-
-
-
-<main>
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section id="home" class="hero">
-
-    <div class="hero-left">
-
-        <div class="hero-tag reveal">
-            <span class="status-dot"></span>
-            AVAILABLE FOR OPPORTUNITIES
-        </div>
-
-        <p class="kicker reveal">
-            INDUSTRIAL ENGINEERING / PORTFOLIO
-        </p>
-
-        <h1 class="hero-title reveal">
-            Designing
-            <br>
-            better
-            <br>
-            <em>processes.</em>
-        </h1>
-
-        <div class="hero-line reveal"></div>
-
-        <p class="hero-name reveal">
-            Ari Muldin Al Banani
-        </p>
-
-        <p class="hero-role reveal">
-            Industrial Engineering
-            <span>•</span>
-            PPIC / PPC
-            <span>•</span>
-            Supply Chain
-        </p>
-
-        <p class="hero-description reveal">
-            Automotive Industrial Engineering graduate from Politeknik STMI Jakarta
-            with hands-on experience in PPIC, PPC, inventory management,
-            warehouse operations, manufacturing, and process improvement.
-        </p>
-
-
-        <div class="hero-actions reveal">
-
-            <a class="button button-dark" href="#projects">
-                Explore Projects
-                <span>↓</span>
-            </a>
-
-            <a
-                class="button button-outline"
-                href="./Ari_Muldin_CV.pdf.pdf"
-                target="_blank"
-                rel="noopener">
-                Download CV
-                <span>↗</span>
-            </a>
-
-        </div>
-
-
-        <div class="hero-meta reveal">
-
-            <div>
-                <span>BASED IN</span>
-                <strong>Jakarta, Indonesia</strong>
-            </div>
-
-            <div>
-                <span>FOCUS</span>
-                <strong>Process Improvement</strong>
-            </div>
-
-        </div>
+        <a href="Ari_Muldin_CV.pdf.pdf" target="_blank" class="mobile-cv">
+            Download CV ↗
+        </a>
 
     </div>
 
 
+    <main>
 
-    <!-- HERO VISUAL -->
+        <!-- HERO -->
+        <section class="hero" id="home">
 
-    <div class="hero-visual reveal">
+            <div class="hero-grid">
 
-        <div class="visual-number">
-            01
-        </div>
+                <div class="hero-content">
 
-        <div class="photo-container">
+                    <div class="eyebrow">
+                        INDUSTRIAL ENGINEERING / PORTFOLIO
+                    </div>
 
-            <div class="photo-frame">
+                    <h1>
+                        Designing better
+                        <span>processes.</span>
+                    </h1>
 
-                <img
-                    src="./profile.jpg.jpeg"
-                    alt="Ari Muldin Al Banani"
-                    class="profile-photo"
-                    onerror="this.style.display='none';document.querySelector('.photo-fallback').style.display='flex';">
+                    <p class="hero-name">
+                        Ari Muldin Al Banani
+                    </p>
 
-                <div class="photo-fallback">
-                    AMA
+                    <p class="hero-role">
+                        Industrial Engineering • PPIC • Warehouse & Logistics • Quality Improvement
+                    </p>
+
+                    <p class="hero-description">
+                        Bachelor of Applied Automotive Industrial Engineering graduate
+                        from Politeknik STMI Jakarta, with hands-on experience in
+                        Supply Chain, PPIC, Inventory Management, Manufacturing
+                        Operations, and Process Improvement.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#projects" class="btn btn-dark">
+                            Explore Projects
+                            <span>↓</span>
+                        </a>
+
+                        <a href="Ari_Muldin_CV.pdf.pdf"
+                           target="_blank"
+                           class="btn btn-outline">
+                            Download CV
+                            <span>↗</span>
+                        </a>
+
+                    </div>
+
+                    <div class="availability">
+                        <span class="status-dot"></span>
+
+                        Open to opportunities in Industrial Engineering,
+                        Supply Chain, PPIC/PPC, Warehouse & Logistics,
+                        Inventory Management and Quality Improvement.
+                    </div>
+
+                </div>
+
+
+                <!-- PROFILE -->
+                <div class="profile-area">
+
+                    <div class="profile-card">
+
+                        <div class="profile-image">
+
+                            <img
+                                src="profile.jpg.jpeg"
+                                alt="Ari Muldin Al Banani"
+                                onerror="this.style.display='none'; document.getElementById('photoFallback').style.display='flex';"
+                            >
+
+                            <div class="photo-fallback" id="photoFallback">
+                                AMA
+                            </div>
+
+                        </div>
+
+                        <div class="profile-info">
+
+                            <div>
+                                <small>FOCUS</small>
+                                <strong>PROCESS<br>IMPROVEMENT</strong>
+                            </div>
+
+                            <div class="profile-number">
+                                01
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="floating-tag tag-one">
+                        PPIC
+                    </div>
+
+                    <div class="floating-tag tag-two">
+                        WAREHOUSE
+                    </div>
+
+                    <div class="floating-tag tag-three">
+                        QCC
+                    </div>
+
                 </div>
 
             </div>
 
-            <div class="corner corner-top"></div>
-            <div class="corner corner-bottom"></div>
+            <div class="scroll-indicator">
+                <span>SCROLL TO EXPLORE</span>
+                <div></div>
+            </div>
 
-        </div>
-
-
-        <div class="visual-label">
-
-            <span>ENGINEER / 01</span>
-
-            <strong>
-                PROCESS
-                <br>
-                IMPROVEMENT
-            </strong>
-
-        </div>
+        </section>
 
 
-        <div class="orbit orbit-1"></div>
-        <div class="orbit orbit-2"></div>
+        <!-- ABOUT -->
+        <section class="section" id="about">
 
-    </div>
+            <div class="section-label">
+                <span>01</span>
+                <p>ABOUT ME</p>
+            </div>
 
-</section>
+            <div class="about-grid">
 
+                <h2>
+                    From operational problems
+                    to <em>measurable improvement.</em>
+                </h2>
 
+                <div class="about-text">
 
-<!-- =====================================================
-     MARQUEE
-===================================================== -->
+                    <p>
+                        Bachelor of Applied Automotive Industrial Engineering
+                        graduate from Politeknik STMI Jakarta. My experience
+                        covers Supply Chain, PPIC, Inventory Management,
+                        Manufacturing Operations, and warehouse process improvement.
+                    </p>
 
-<div class="marquee">
+                    <p>
+                        Currently gaining experience in Production Planning &
+                        Control within a manufacturing environment, supporting
+                        production planning, material control, production
+                        monitoring, reporting, and cross-functional coordination.
+                    </p>
 
-    <div class="marquee-track">
+                    <div class="stats">
 
-        <span>PPIC</span>
-        <i>✦</i>
+                        <div class="stat">
+                            <strong>PPIC</strong>
+                            <span>Planning & Inventory</span>
+                        </div>
 
-        <span>PPC</span>
-        <i>✦</i>
+                        <div class="stat">
+                            <strong>QCC</strong>
+                            <span>Continuous Improvement</span>
+                        </div>
 
-        <span>SUPPLY CHAIN</span>
-        <i>✦</i>
+                        <div class="stat">
+                            <strong>BPMN</strong>
+                            <span>Process Analysis</span>
+                        </div>
 
-        <span>WAREHOUSE</span>
-        <i>✦</i>
+                        <div class="stat">
+                            <strong>APPSHEET</strong>
+                            <span>Digitalization</span>
+                        </div>
 
-        <span>INVENTORY</span>
-        <i>✦</i>
+                    </div>
 
-        <span>PROCESS IMPROVEMENT</span>
-        <i>✦</i>
+                </div>
 
-        <span>PPIC</span>
-        <i>✦</i>
+            </div>
 
-        <span>PPC</span>
-        <i>✦</i>
-
-        <span>SUPPLY CHAIN</span>
-        <i>✦</i>
-
-        <span>WAREHOUSE</span>
-        <i>✦</i>
-
-    </div>
-
-</div>
-
-
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-<section id="about" class="section about-section">
-
-    <div class="section-header reveal">
-
-        <div class="section-number">
-            01
-        </div>
-
-        <div class="section-label">
-            ABOUT ME
-        </div>
-
-    </div>
+        </section>
 
 
-    <div class="about-grid">
+        <!-- PROJECTS -->
+        <section class="section projects-section" id="projects">
 
-        <div class="about-heading reveal">
+            <div class="section-label">
+                <span>02</span>
+                <p>SELECTED PROJECTS</p>
+            </div>
 
-            <p class="eyebrow">
-                WHO I AM
-            </p>
-
-            <h2>
-                Turning operational
-                <em>problems</em>
-                into measurable improvement.
+            <h2 class="section-heading">
+                Real projects.
+                <em>Real improvement.</em>
             </h2>
 
-        </div>
 
+            <!-- PROJECT 1 -->
+            <article class="project featured-project">
 
-        <div class="about-content reveal">
+                <div class="project-top">
 
-            <p>
-                I am a Bachelor of Applied Automotive Industrial Engineering
-                graduate from Politeknik STMI Jakarta with a strong interest
-                in manufacturing, supply chain, PPIC/PPC, warehouse management,
-                inventory control, and continuous improvement.
-            </p>
+                    <span>01 / QCC</span>
+                    <span>WAREHOUSE • OTD</span>
 
-            <p>
-                My experience includes supporting production planning,
-                material control, finished-goods inventory, warehouse operations,
-                reporting, and cross-functional coordination in manufacturing
-                environments.
-            </p>
-
-            <p>
-                I enjoy analyzing operational problems, mapping processes,
-                identifying non-value-added activities, and developing practical
-                improvements supported by data.
-            </p>
-
-
-            <div class="about-stats">
-
-                <div class="stat">
-                    <strong>01+</strong>
-                    <span>Year PPIC Experience</span>
                 </div>
-
-                <div class="stat">
-                    <strong>04</strong>
-                    <span>Improvement Projects</span>
-                </div>
-
-                <div class="stat">
-                    <strong>58.22%</strong>
-                    <span>Process Time Reduction</span>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     PROJECTS
-===================================================== -->
-
-<section id="projects" class="section projects-section">
-
-    <div class="section-header reveal">
-
-        <div class="section-number">
-            02
-        </div>
-
-        <div class="section-label">
-            SELECTED PROJECTS
-        </div>
-
-    </div>
-
-
-    <div class="projects-intro">
-
-        <h2 class="reveal">
-            Work that creates
-            <em>impact.</em>
-        </h2>
-
-        <p class="reveal">
-            Selected academic and practical projects focused on
-            warehouse, inventory, digitalization, and process improvement.
-        </p>
-
-    </div>
-
-
-
-    <!-- PROJECT 01 -->
-
-    <article class="project-card project-featured reveal">
-
-        <div class="project-top">
-
-            <span>01 / QCC</span>
-
-            <span>WAREHOUSE • OTD</span>
-
-        </div>
-
-
-        <div class="project-content">
-
-            <div class="project-title">
-
-                <p>QUALITY CONTROL CIRCLE</p>
 
                 <h3>
                     Improving On-Time Delivery
                     Through Warehouse Redesign
                 </h3>
 
-            </div>
-
-
-            <div class="project-description">
-
-                <p>
-                    Redesigned the warehouse storage system from floor
-                    storage to a racking-based concept to improve
-                    accessibility, organization, space utilization,
-                    and retrieval efficiency.
+                <p class="project-description">
+                    Redesigned the storage system from floor storage to a
+                    racking system to improve material accessibility,
+                    storage organization, space utilization and retrieval
+                    efficiency, supporting better On-Time Delivery performance.
                 </p>
 
-
-                <div class="project-tags">
-
-                    <span>QCC</span>
-                    <span>Warehouse</span>
-                    <span>Layout</span>
-                    <span>OTD</span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="project-details">
-
-            <div>
-                <span>PROBLEM</span>
-                <p>
-                    Inefficient floor storage and difficult material access.
-                </p>
-            </div>
-
-            <div>
-                <span>IMPROVEMENT</span>
-                <p>
-                    Racking system and clearer storage locations.
-                </p>
-            </div>
-
-            <div>
-                <span>METHOD</span>
-                <p>
-                    QCC, observation and warehouse analysis.
-                </p>
-            </div>
-
-            <div>
-                <span>IMPACT</span>
-                <p>
-                    Better organization and material retrieval.
-                </p>
-            </div>
-
-        </div>
-
-    </article>
-
-
-
-    <!-- PROJECT 02 -->
-
-    <article class="project-card reveal">
-
-        <div class="project-top">
-
-            <span>02 / DIGITAL</span>
-
-            <span>APPSHEET</span>
-
-        </div>
-
-
-        <div class="project-content">
-
-            <div class="project-title">
-
-                <p>DIGITALIZATION</p>
-
-                <h3>
-                    In/Out Inventory
-                    Application
-                </h3>
-
-            </div>
-
-
-            <div class="project-description">
-
-                <p>
-                    Developed an AppSheet-based digital transaction
-                    system for finished-goods In/Out recording and
-                    inventory monitoring.
-                </p>
-
-
-                <div class="project-tags">
-
-                    <span>AppSheet</span>
-                    <span>Inventory</span>
-                    <span>Barcode</span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </article>
-
-
-
-    <!-- PROJECT 03 -->
-
-    <article class="project-card reveal">
-
-        <div class="project-top">
-
-            <span>03 / BPR</span>
-
-            <span>PROCESS</span>
-
-        </div>
-
-
-        <div class="project-content">
-
-            <div class="project-title">
-
-                <p>BUSINESS PROCESS REENGINEERING</p>
-
-                <h3>
-                    Warehouse Process
-                    Improvement
-                </h3>
-
-            </div>
-
-
-            <div class="project-description">
-
-                <p>
-                    Analyzed and redesigned warehouse processes using
-                    BPR, BPMN, and Process Activity Mapping to reduce
-                    unnecessary activities and improve process efficiency.
-                </p>
-
-
-                <div class="metric-box">
+                <div class="project-details">
 
                     <div>
-                        <strong>13 → 8</strong>
-                        <span>Activities</span>
+                        <small>PROBLEM</small>
+                        <p>
+                            Floor storage created inefficient space usage
+                            and made material identification, access and
+                            handling less effective.
+                        </p>
                     </div>
 
                     <div>
+                        <small>IMPROVEMENT</small>
+                        <p>
+                            Developed a racking-based storage concept
+                            with clearer locations and improved
+                            material accessibility.
+                        </p>
+                    </div>
+
+                    <div>
+                        <small>METHOD</small>
+                        <p>
+                            Quality Control Circle, warehouse observation
+                            and process improvement analysis.
+                        </p>
+                    </div>
+
+                    <div>
+                        <small>IMPACT</small>
+                        <p>
+                            Better warehouse organization, easier retrieval
+                            and stronger support for On-Time Delivery.
+                        </p>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT ROW -->
+            <div class="project-row">
+
+                <article class="project-card">
+
+                    <div class="project-top">
+                        <span>02 / DIGITAL</span>
+                        <span>APPSHEET</span>
+                    </div>
+
+                    <h3>
+                        In/Out Inventory Application
+                    </h3>
+
+                    <p>
+                        Developed an AppSheet-based transaction system for
+                        finished-goods in/out recording and inventory
+                        monitoring to reduce unrecorded transactions
+                        and improve stock traceability.
+                    </p>
+
+                    <div class="chips">
+                        <span>AppSheet</span>
+                        <span>Inventory</span>
+                        <span>Digitalization</span>
+                    </div>
+
+                </article>
+
+
+                <article class="project-card">
+
+                    <div class="project-top">
+                        <span>03 / BPR</span>
+                        <span>PROCESS</span>
+                    </div>
+
+                    <h3>
+                        Warehouse Process Improvement Using BPR
+                    </h3>
+
+                    <p>
+                        Analyzed and redesigned warehouse processes using
+                        BPMN and Process Activity Mapping to streamline
+                        activities and eliminate non-value-added work.
+                    </p>
+
+                    <div class="metric">
+                        <strong>13 → 8</strong>
+                        <span>Activities</span>
+
                         <strong>57.20 → 23.90</strong>
                         <span>Minutes</span>
                     </div>
 
+                </article>
+
+            </div>
+
+
+            <!-- PROJECT ROW -->
+            <div class="project-row">
+
+                <article class="project-card">
+
+                    <div class="project-top">
+                        <span>04 / FIFO</span>
+                        <span>VISUAL CONTROL</span>
+                    </div>
+
+                    <h3>
+                        FIFO Tag & Warehouse Visual Management
+                    </h3>
+
+                    <p>
+                        Designed FIFO tags and visual controls to improve
+                        material identification, stock rotation and
+                        operator awareness in the finished-goods warehouse.
+                    </p>
+
+                    <div class="chips">
+                        <span>FIFO</span>
+                        <span>5S</span>
+                        <span>Visual Management</span>
+                    </div>
+
+                </article>
+
+
+                <article class="result-card">
+
+                    <div class="result-number">
+                        58.22%
+                    </div>
+
+                    <p>
+                        process time reduction in the redesigned
+                        process mapping analysis
+                    </p>
+
+                    <small>
+                        PROJECT IMPROVEMENT RESULT
+                    </small>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- EXPERIENCE -->
+        <section class="section" id="experience">
+
+            <div class="section-label">
+                <span>03</span>
+                <p>WORK EXPERIENCE</p>
+            </div>
+
+            <h2 class="section-heading">
+                Manufacturing <em>experience.</em>
+            </h2>
+
+
+            <div class="timeline">
+
+                <article class="timeline-item">
+
+                    <div class="timeline-date">
+                        INTERNSHIP
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <span>2026</span>
+
+                        <h3>
+                            PT Gemala Kempa Daya
+                        </h3>
+
+                        <strong>
+                            PPC Intern
+                        </strong>
+
+                        <p>
+                            Supported Production Planning & Control
+                            activities and operational data management
+                            in a manufacturing environment.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="timeline-item">
+
+                    <div class="timeline-date">
+                        INTERNSHIP
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <span>2025</span>
+
+                        <h3>
+                            PT Mada Wikri Tunggal
+                        </h3>
+
+                        <strong>
+                            PPIC Finished Goods Intern
+                        </strong>
+
+                        <p>
+                            Handled finished-goods inventory monitoring,
+                            delivery analysis, warehouse control,
+                            reporting and improvement initiatives.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ORGANIZATION -->
+        <section class="section">
+
+            <div class="section-label">
+                <span>04</span>
+                <p>ORGANIZATION EXPERIENCE</p>
+            </div>
+
+            <div class="organization-grid">
+
+                <article class="organization-card">
+
+                    <span>
+                        OCT 2024 — MAR 2025
+                    </span>
+
+                    <h3>
+                        Chairman — Forum Komunikasi
+                        Mahasiswa Islam
+                    </h3>
+
+                    <ul>
+                        <li>
+                            Led strategic programs aligned with
+                            organizational goals and performance targets.
+                        </li>
+
+                        <li>
+                            Coordinated cross-functional teams for
+                            effective and timely execution.
+                        </li>
+
+                        <li>
+                            Made data-driven decisions and resolved
+                            organizational issues efficiently.
+                        </li>
+                    </ul>
+
+                </article>
+
+
+                <article class="organization-card">
+
+                    <span>
+                        AUG 2024
+                    </span>
+
+                    <h3>
+                        Head of Equipment Division — PKKMB
+                    </h3>
+
+                    <ul>
+                        <li>
+                            Managed logistics and inventory to ensure
+                            event needs were fulfilled on time.
+                        </li>
+
+                        <li>
+                            Coordinated multiple teams for smooth
+                            distribution and operations.
+                        </li>
+
+                        <li>
+                            Supervised equipment in/out flow and stock
+                            control to prevent shortages and loss.
+                        </li>
+                    </ul>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- SKILLS -->
+        <section class="section skills-section" id="skills">
+
+            <div class="section-label">
+                <span>05</span>
+                <p>SKILLS & TRAINING</p>
+            </div>
+
+            <div class="skills-grid">
+
+                <h2>
+                    Tools & areas
+                    of <em>expertise.</em>
+                </h2>
+
+                <div class="skill-list">
+
+                    <span>Microsoft Excel</span>
+                    <span>Microsoft Word</span>
+                    <span>PowerPoint</span>
+                    <span>Microsoft Visio</span>
+
+                    <span>Autodesk Inventor</span>
+                    <span>Canva</span>
+
+                    <span>PPIC / PPC</span>
+                    <span>Supply Chain</span>
+
+                    <span>Inventory Management</span>
+                    <span>Warehouse Management</span>
+
+                    <span>Quality Control</span>
+                    <span>Lean Manufacturing</span>
+
+                    <span>QCC</span>
+                    <span>Kaizen</span>
+
+                    <span>Process Improvement</span>
+                    <span>Data-Driven Decision Making</span>
+
                 </div>
 
             </div>
 
-        </div>
-
-    </article>
+        </section>
 
 
+        <!-- CONTACT -->
+        <section class="contact-section" id="contact">
 
-    <!-- PROJECT 04 -->
+            <div class="contact-inner">
 
-    <article class="project-card reveal">
+                <div class="section-label">
+                    <span>06</span>
+                    <p>CONTACT</p>
+                </div>
 
-        <div class="project-top">
-
-            <span>04 / FIFO</span>
-
-            <span>VISUAL CONTROL</span>
-
-        </div>
-
-
-        <div class="project-content">
-
-            <div class="project-title">
-
-                <p>WAREHOUSE MANAGEMENT</p>
-
-                <h3>
-                    FIFO Tag & Visual
-                    Management
-                </h3>
-
-            </div>
-
-
-            <div class="project-description">
+                <h2>
+                    Let's improve
+                    the <em>process.</em>
+                </h2>
 
                 <p>
-                    Designed FIFO tags and visual controls to improve
-                    material identification, stock rotation,
-                    organization, and operator awareness.
+                    Interested in discussing opportunities,
+                    projects or process improvement?
                 </p>
 
+                <div class="contact-buttons">
 
-                <div class="project-tags">
+                    <a
+                        href="mailto:muldinalbanani@gmail.com"
+                        class="btn btn-light">
+                        muldinalbanani@gmail.com
+                    </a>
 
-                    <span>FIFO</span>
-                    <span>5S</span>
-                    <span>Visual Management</span>
+                    <a
+                        href="https://www.linkedin.com/in/ari-muldin-al-banani-8ab765287/"
+                        target="_blank"
+                        class="btn btn-outline-light">
+                        LinkedIn ↗
+                    </a>
 
                 </div>
 
             </div>
 
-        </div>
+        </section>
 
-    </article>
+    </main>
 
 
+    <!-- FOOTER -->
+    <footer>
 
-    <!-- BIG RESULT -->
+        <span>
+            © 2026 Ari Muldin Al Banani
+        </span>
 
-    <div class="result-section reveal">
+        <span>
+            Industrial Engineering Portofolio
+        </span>
 
-        <div class="result-left">
+    </footer>
 
-            <span>PROJECT RESULT</span>
 
-            <h3>
-                Efficiency through
-                <em>process redesign.</em>
-            </h3>
-
-        </div>
-
-
-        <div class="counter-container">
-
-            <div
-                class="counter"
-                data-target="58.22">
-                0
-            </div>
-
-            <span>%</span>
-
-        </div>
-
-
-        <p>
-            reduction in process time after
-            warehouse process improvement.
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     EXPERIENCE
-===================================================== -->
-
-<section id="experience" class="section experience-section">
-
-    <div class="section-header reveal">
-
-        <div class="section-number">
-            03
-        </div>
-
-        <div class="section-label">
-            WORK EXPERIENCE
-        </div>
-
-    </div>
-
-
-    <div class="experience-heading reveal">
-
-        <h2>
-            Manufacturing
-            <em>experience.</em>
-        </h2>
-
-    </div>
-
-
-    <div class="timeline">
-
-
-        <!-- EXPERIENCE 01 -->
-
-        <article class="timeline-item reveal">
-
-            <div class="timeline-index">
-                01
-            </div>
-
-            <div class="timeline-date">
-                INTERNSHIP
-            </div>
-
-            <div class="timeline-content">
-
-                <p class="company-type">
-                    MANUFACTURING
-                </p>
-
-                <h3>
-                    PT Gemala Kempa Daya
-                </h3>
-
-                <h4>
-                    PPC Intern
-                </h4>
-
-                <p>
-                    Supported Production Planning & Control activities,
-                    production monitoring, material control, operational
-                    reporting, and coordination across related departments.
-                </p>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- EXPERIENCE 02 -->
-
-        <article class="timeline-item reveal">
-
-            <div class="timeline-index">
-                02
-            </div>
-
-            <div class="timeline-date">
-                INTERNSHIP
-            </div>
-
-            <div class="timeline-content">
-
-                <p class="company-type">
-                    AUTOMOTIVE MANUFACTURING
-                </p>
-
-                <h3>
-                    PT Mada Wikri Tunggal
-                </h3>
-
-                <h4>
-                    PPIC Finished Goods Intern
-                </h4>
-
-                <p>
-                    Managed finished-goods inventory monitoring,
-                    delivery analysis, warehouse control, reporting,
-                    and continuous improvement initiatives.
-                </p>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ORGANIZATION
-===================================================== -->
-
-<section class="section organization-section">
-
-    <div class="section-header reveal">
-
-        <div class="section-number">
-            04
-        </div>
-
-        <div class="section-label">
-            ORGANIZATION
-        </div>
-
-    </div>
-
-
-    <div class="organization-grid">
-
-
-        <article class="org-card reveal">
-
-            <span class="org-number">
-                01
-            </span>
-
-            <p class="org-date">
-                OCT 2024 — MAR 2025
-            </p>
-
-            <h3>
-                Chairman
-            </h3>
-
-            <h4>
-                Forum Komunikasi Mahasiswa Islam
-            </h4>
-
-            <ul>
-
-                <li>
-                    Led strategic programs aligned with organizational goals.
-                </li>
-
-                <li>
-                    Coordinated cross-functional teams.
-                </li>
-
-                <li>
-                    Made data-driven decisions and resolved organizational issues.
-                </li>
-
-            </ul>
-
-        </article>
-
-
-
-        <article class="org-card reveal">
-
-            <span class="org-number">
-                02
-            </span>
-
-            <p class="org-date">
-                AUG 2024
-            </p>
-
-            <h3>
-                Head of Equipment Division
-            </h3>
-
-            <h4>
-                PKKMB
-            </h4>
-
-            <ul>
-
-                <li>
-                    Managed event logistics and inventory.
-                </li>
-
-                <li>
-                    Coordinated equipment distribution.
-                </li>
-
-                <li>
-                    Supervised equipment In/Out flow and stock control.
-                </li>
-
-            </ul>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     SKILLS
-===================================================== -->
-
-<section id="skills" class="section skills-section">
-
-    <div class="section-header reveal">
-
-        <div class="section-number">
-            05
-        </div>
-
-        <div class="section-label">
-            SKILLS & TOOLS
-        </div>
-
-    </div>
-
-
-    <div class="skills-layout">
-
-        <div class="skills-heading reveal">
-
-            <h2>
-                Tools for
-                <em>better work.</em>
-            </h2>
-
-            <p>
-                Combining analytical thinking, operational knowledge,
-                digital tools, and continuous improvement methods.
-            </p>
-
-        </div>
-
-
-        <div class="skills-list reveal">
-
-            <span>Microsoft Excel</span>
-            <span>Microsoft Word</span>
-            <span>PowerPoint</span>
-            <span>Microsoft Visio</span>
-
-            <span>Autodesk Inventor</span>
-            <span>Canva</span>
-
-            <span>PPIC / PPC</span>
-            <span>Supply Chain</span>
-
-            <span>Inventory Management</span>
-            <span>Warehouse Management</span>
-
-            <span>Quality Control</span>
-            <span>Lean Manufacturing</span>
-
-            <span>QCC</span>
-            <span>Kaizen</span>
-
-            <span>BPMN</span>
-            <span>Business Process Reengineering</span>
-
-            <span>Process Improvement</span>
-            <span>Data-Driven Decision Making</span>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
-
-<section id="contact" class="contact-section">
-
-    <div class="contact-grid">
-
-        <div class="contact-number">
-            06
-        </div>
-
-
-        <div class="contact-main reveal">
-
-            <p class="eyebrow">
-                LET'S CONNECT
-            </p>
-
-            <h2>
-                Let's improve
-                <br>
-                the <em>process.</em>
-            </h2>
-
-            <p>
-                Interested in opportunities, collaboration,
-                or process improvement?
-                Let's connect.
-            </p>
-
-
-            <div class="contact-buttons">
-
-                <a
-                    class="button button-dark"
-                    href="mailto:muldinalbanani@gmail.com">
-
-                    Email Me
-                    <span>↗</span>
-
-                </a>
-
-
-                <a
-                    class="button button-outline"
-                    href="https://www.linkedin.com/in/ari-muldin-al-banani-8ab765287/"
-                    target="_blank"
-                    rel="noopener">
-
-                    LinkedIn
-                    <span>↗</span>
-
-                </a>
-
-            </div>
-
-
-            <a
-                class="email-link"
-                href="mailto:muldinalbanani@gmail.com">
-
-                muldinalbanani@gmail.com
-
-            </a>
-
-        </div>
-
-
-        <div class="contact-side reveal">
-
-            <div class="contact-circle">
-
-                <span>AMA</span>
-
-                <div class="circle-line"></div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-</main>
-
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-    <div>
-        © 2026 Ari Muldin Al Banani
-    </div>
-
-    <div>
-        INDUSTRIAL ENGINEERING / PORTOFOLIO
-    </div>
-
-    <a href="#home">
-        BACK TO TOP ↑
-    </a>
-
-</footer>
-
-
-
-<script src="./script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
